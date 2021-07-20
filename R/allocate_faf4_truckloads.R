@@ -64,7 +64,11 @@ allocate_faf4_truckloads <- function(faf_truck_flows, internal_regions,
     # First match the origins, which requires recoding the attactions
     N <- nrow(dplyr::filter(faf_truck_flows, sctg2 == this_commodity,
       dms_orig %in% internal_regions))
-    if (N > 0) {
+    
+	if (N > 0) {
+	
+	# Set the seed to produce reproducible results
+	set_seed(2018)
       faf_truck_flows$origin[faf_truck_flows$sctg2 == this_commodity &
           faf_truck_flows$dms_orig %in% internal_regions] <- sample(
             attractions$STDM_TAZ, N, replace = TRUE, prob = attractions$combi)
@@ -74,6 +78,9 @@ allocate_faf4_truckloads <- function(faf_truck_flows, internal_regions,
     N <- nrow(dplyr::filter(faf_truck_flows, sctg2 == this_commodity,
       dms_dest %in% internal_regions))
     if (N > 0) {
+	
+	# Set the seed to produce reproducible results
+	set_seed(2018)
       faf_truck_flows$destination[faf_truck_flows$sctg2 == this_commodity &
           faf_truck_flows$dms_dest %in% internal_regions] <- sample(
             attractions$STDM_TAZ, N, replace = TRUE, prob = attractions$combi)

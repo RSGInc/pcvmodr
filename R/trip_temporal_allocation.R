@@ -37,6 +37,10 @@ trip_temporal_allocation <- function(daily_trips, temporal_distributions) {
       print(paste("Sampling from", nrow(this_distribution), "intervals for",
         N, this_vehicle_type, "daily truck trips"), quote = FALSE)
     }
+	
+	
+    # Set the seed to produce reproducible results
+	set_seed(2018)
 
     # Sample the starting hour
     daily_trips$start_hour[daily_trips$vehicle_type == this_vehicle_type] <-

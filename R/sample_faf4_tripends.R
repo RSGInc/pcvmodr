@@ -156,6 +156,10 @@ sample_faf4_tripends <- function(daily_trips, zonal_attractions,
         if (sum(these_attractors$attractions) == 0) {
           these_attractors$attractions <- 1
         }
+		
+		
+		# Set the seed to produce reproducible results
+		set_seed(2018)
 
         # Sample the TAZ within this origin FAF region and commodity
         daily_trips$ozone[daily_trips$dms_orig == this_origin &
@@ -230,6 +234,10 @@ sample_faf4_tripends <- function(daily_trips, zonal_attractions,
         if (sum(these_attractors$attractions) == 0) {
           these_attractors$attractions <- 1
         }
+		
+		
+		# Set the seed to produce reproducible results
+		set_seed(2018)
 
         # Sample the TAZ within this origin FAF region and commodity
         daily_trips$dzone[daily_trips$dms_dest == this_destination &

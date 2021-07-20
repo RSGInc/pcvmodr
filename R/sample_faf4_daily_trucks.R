@@ -33,6 +33,9 @@ sample_faf4_daily_trucks <- function(annual_truckloads, target.week = 24,
     # and then split flow records into discrete annual trucks
     dplyr::mutate(tons = tons / annual_trucks, value = value / annual_trucks) %>%
     tidyr::uncount(annual_trucks)
+	
+  # Set the seed to produce reproducible results
+  set_seed(2018)
   
   # Sample the week and day for each discrete truck
   discrete_trucks$week <- sample(1:52, size = nrow(discrete_trucks), 

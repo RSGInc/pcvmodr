@@ -101,6 +101,9 @@ sample_local_destinations <- function(truck_origins, skim_distances,
         truck_origins$destination[truck_origins$vehicle_type == this_vehicle_type &
             truck_origins$origin == this_origin] <- these_targets$destination
       } else {
+	  
+		# Set the seed to produce reproducible results
+		set_seed(2018)
         truck_origins$destination[truck_origins$vehicle_type == this_vehicle_type &
             truck_origins$origin == this_origin] <-
           sample(these_targets$destination, N, replace = TRUE,
