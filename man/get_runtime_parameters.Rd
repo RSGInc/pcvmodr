@@ -4,8 +4,7 @@
 \alias{get_runtime_parameters}
 \title{Create database of runtime parameters}
 \usage{
-get_runtime_parameters(filename, tokens_sep = "=",
-  echo_parameters = TRUE)
+get_runtime_parameters(filename, tokens_sep = "=", echo_parameters = TRUE)
 }
 \arguments{
 \item{filename}{Fully qualified path and filename of text file containing

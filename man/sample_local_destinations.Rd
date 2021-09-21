@@ -4,9 +4,14 @@
 \alias{sample_local_destinations}
 \title{Sample destinations for trips in local truck tours}
 \usage{
-sample_local_destinations(truck_origins, skim_distances,
-  trip_length_targets, max_distance = 120, allow_intrazonals = TRUE,
-  debug_tracing = FALSE)
+sample_local_destinations(
+  truck_origins,
+  skim_distances,
+  trip_length_targets,
+  max_distance = 120,
+  allow_intrazonals = TRUE,
+  debug_tracing = FALSE
+)
 }
 \arguments{
 \item{truck_origins}{Data frame containing discrete trip records with origin

@@ -67,8 +67,13 @@ allocate_faf4_truckloads <- function(faf_truck_flows, internal_regions,
     
 	if (N > 0) {
 	
-	# Set the seed to produce reproducible results
-	set_seed(2018)
+	  # Set the seed to produce reproducible results
+      user_seed <- get("RTP", envir=parent.frame())[["seed"]]
+      if(is.null(user_seed)){
+        set.seed(2018)
+      } else {
+          set.seed(user_seed)
+      }
       faf_truck_flows$origin[faf_truck_flows$sctg2 == this_commodity &
           faf_truck_flows$dms_orig %in% internal_regions] <- sample(
             attractions$STDM_TAZ, N, replace = TRUE, prob = attractions$combi)
@@ -79,8 +84,13 @@ allocate_faf4_truckloads <- function(faf_truck_flows, internal_regions,
       dms_dest %in% internal_regions))
     if (N > 0) {
 	
-	# Set the seed to produce reproducible results
-	set_seed(2018)
+	  # Set the seed to produce reproducible results
+      user_seed <- get("RTP", envir=parent.frame())[["seed"]]
+      if(is.null(user_seed)){
+        set.seed(2018)
+      } else {
+          set.seed(user_seed)
+      }
       faf_truck_flows$destination[faf_truck_flows$sctg2 == this_commodity &
           faf_truck_flows$dms_dest %in% internal_regions] <- sample(
             attractions$STDM_TAZ, N, replace = TRUE, prob = attractions$combi)

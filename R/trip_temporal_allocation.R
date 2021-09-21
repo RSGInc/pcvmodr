@@ -40,7 +40,12 @@ trip_temporal_allocation <- function(daily_trips, temporal_distributions) {
 	
 	
     # Set the seed to produce reproducible results
-	set_seed(2018)
+    user_seed <- get("RTP", envir=parent.frame())[["seed"]]
+    if(is.null(user_seed)){
+      set.seed(2018)
+    } else {
+        set.seed(user_seed)
+    }
 
     # Sample the starting hour
     daily_trips$start_hour[daily_trips$vehicle_type == this_vehicle_type] <-

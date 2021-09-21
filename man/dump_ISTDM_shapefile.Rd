@@ -4,9 +4,14 @@
 \alias{dump_ISTDM_shapefile}
 \title{Transform Cube assignment results in ESRI shapefile to data frame}
 \usage{
-dump_ISTDM_shapefile(shapefile, period_label, districts_def,
-  areatypes = c("CBD", "Urban", "Rural"), combine.directions = TRUE,
-  count.direction = "two-way")
+dump_ISTDM_shapefile(
+  shapefile,
+  period_label,
+  districts_def,
+  areatypes = c("CBD", "Urban", "Rural"),
+  combine.directions = TRUE,
+  count.direction = "two-way"
+)
 }
 \arguments{
 \item{shapefile}{Data frame containing the contents of the dBASE (.dbf) file

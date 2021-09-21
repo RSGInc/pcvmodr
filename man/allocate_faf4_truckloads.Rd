@@ -4,8 +4,12 @@
 \alias{allocate_faf4_truckloads}
 \title{Allocate flows from FAF regions to traffic analysis zones}
 \usage{
-allocate_faf4_truckloads(faf_truck_flows, internal_regions,
-  zonal_attractions, zonal_equivalencies)
+allocate_faf4_truckloads(
+  faf_truck_flows,
+  internal_regions,
+  zonal_attractions,
+  zonal_equivalencies
+)
 }
 \arguments{
 \item{faf_truck_flows}{Data frame containing truck flows between domestic

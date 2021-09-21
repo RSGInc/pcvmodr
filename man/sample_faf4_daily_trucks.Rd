@@ -4,8 +4,7 @@
 \alias{sample_faf4_daily_trucks}
 \title{Sample daily FAF trucks from annual truckload estimates}
 \usage{
-sample_faf4_daily_trucks(annual_truckloads, target.week = 24,
-  target.day = 4)
+sample_faf4_daily_trucks(annual_truckloads, target.week = 24, target.day = 4)
 }
 \arguments{
 \item{annual_truckloads}{Data frame containing FAF flow records with 

@@ -4,8 +4,13 @@
 \alias{write_file}
 \title{Context-sensitive file writer}
 \usage{
-write_file(df, filename, overwrite = TRUE, compress_wait = FALSE,
-  compress_threads = 0)
+write_file(
+  df,
+  filename,
+  overwrite = TRUE,
+  compress_wait = FALSE,
+  compress_threads = 0
+)
 }
 \arguments{
 \item{df}{Data frame or tibble that will be written to the output file}

@@ -35,7 +35,12 @@ sample_faf4_daily_trucks <- function(annual_truckloads, target.week = 24,
     tidyr::uncount(annual_trucks)
 	
   # Set the seed to produce reproducible results
-  set_seed(2018)
+  user_seed <- get("RTP", envir=parent.frame())[["seed"]]
+  if(is.null(user_seed)){
+    set.seed(2018)
+  } else {
+      set.seed(user_seed)
+  }
   
   # Sample the week and day for each discrete truck
   discrete_trucks$week <- sample(1:52, size = nrow(discrete_trucks), 
